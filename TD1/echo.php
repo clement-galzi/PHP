@@ -6,18 +6,39 @@
     </head>
    
     <body>
-        Voici le résultat du script PHP : 
         <?php
-          // Ceci est un commentaire PHP sur une ligne
-          /* Ceci est le 2ème type de commentaire PHP
-          sur plusieurs lignes */
-           
-          // On met la chaine de caractères "hello" dans la variable 'texte'
-          // Les noms de variable commencent par $ en PHP
-          $texte = "hello world !";
+          $marque = "Ferrari";
+          $couleur = "rouge";
+          $immatriculation = "TG345BB";
+          echo "Voiture $immatriculation de marque $marque (couleur $couleur) <br/>";
 
-          // On écrit le contenu de la variable 'texte' dans la page Web
-          echo $texte;
-        ?>
+          $voiture1['marque'] = 'Porsche';
+          $voiture1['couleur'] = 'noire';
+          $voiture1['immatriculation']='PierrePedale';
+
+          $voiture2['marque'] = 'BMW';
+          $voiture2['couleur'] = 'grise';
+          $voiture2['immatriculation']='ABBA345';
+
+          $voiture3['marque'] = 'Aston Martin';
+          $voiture3['couleur'] = 'blanche';
+          $voiture3['immatriculation']='EZTP123';
+
+          $voitures[0] = $voiture1;
+          $voitures[1] = $voiture2;
+          $voitures[2] = $voiture3; 
+
+          if (empty($voitures))
+            echo "il n'y a aucune voiture";
+          else 
+            foreach ($voitures as $cle => $valeur){
+              echo "<br\> Voiture {$valeur['immatriculation']} de marque {$valeur['marque']} (couleur {$valeur['couleur']}) <br/>";
+          }
+
+
+         
+
+
+    ?>
     </body>
 </html> 
