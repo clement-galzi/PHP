@@ -1,7 +1,7 @@
 <?php
 class trajet{
 	 private $id;
-  	private $poitDepart;
+  	private $pointDepart;
   	private $pointArrivee;
     private $date;
     private $nbPlaces;
@@ -9,9 +9,13 @@ class trajet{
     private $conducteur_login;
 
   	public function __construct($data)  {
-   $this->id = $log;
-   $this->nom = $nom;
-   $this->prenom = $prenom;
+   $this->id = $data["id"];
+   $this->pointDepart = $data["pointDepart"];
+   $this->pointArrivee = $data["pointArrivee"];
+   $this->date = $data["date"];
+   $this->nbPlaces = $data["nbPlaces"];
+   $this->prix = $data["prix"];
+   $this->conducteur_login = $data["conducteur_login"];
   } 
 
   get($nom_attribut){
