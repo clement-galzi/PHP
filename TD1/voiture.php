@@ -45,7 +45,7 @@ class Voiture {
            
   // une methode d'affichage.
   public function afficher() {
-    return "<br\> Voiture this->immatriculation de marque this->marque (couleur this->couleur) <br/>";
+    echo "<br\> Voiture $this->immatriculation de marque $this->marque (couleur $this->couleur) <br/>";
     
   }
 }
