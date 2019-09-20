@@ -6,12 +6,6 @@ class Conf {
     return self::$debug;
   }
 
-
-
-
-
-
-   
   static private $databases = array(
     // Le nom d'hote est webinfo a l'IUT
     // ou localhost sur votre machine
