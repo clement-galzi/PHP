@@ -60,4 +60,29 @@ class Trajet {
             die();
         }
     }
+    public static function findPassagers($id){
+        $sql = "SELECT utilisateur.login, utilisateur.nom, utilisateur.prenom 
+                FROM trajet 
+                INNER JOIN passager ON trajet.id=passager.trajet_id 
+                INNER JOIN utilisateur ON utilisateur.login = passager.utilisateur_login 
+                WHERE trajet.id = $id";
+        // Préparation de la requête
+        $req_prep = Model::$pdo->prepare($sql);
+
+        $values = array(
+            "nom_tag" => $,
+            //nomdutag => valeur, ...
+        );
+        // On donne les valeurs et on exécute la requête
+        $req_prep->execute($values);
+
+        // On récupère les résultats comme précédemment
+        $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Voiture');
+        $tab_voit = $req_prep->fetchAll();
+        // Attention, si il n'y a pas de résultats, on renvoie false
+        if (empty($tab_voit))
+            return false;
+        return $tab_voit[0];
+    }
+
 }
