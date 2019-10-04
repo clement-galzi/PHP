@@ -70,19 +70,19 @@ class Trajet {
         $req_prep = Model::$pdo->prepare($sql);
 
         $values = array(
-            "nom_tag" => $,
+            "nom_tag" => $id,
             //nomdutag => valeur, ...
         );
         // On donne les valeurs et on exécute la requête
         $req_prep->execute($values);
 
         // On récupère les résultats comme précédemment
-        $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Voiture');
-        $tab_voit = $req_prep->fetchAll();
+        $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Utilisateur');
+        $tab_utilisateur = $req_prep->fetchAll();
         // Attention, si il n'y a pas de résultats, on renvoie false
-        if (empty($tab_voit))
+        if (empty($tab_utilisateur))
             return false;
-        return $tab_voit[0];
+        return $tab_utilisateur[0];
     }
 
 }
