@@ -7,7 +7,7 @@
     <body>
         <?php
         foreach ($tab_v as $v)
-            echo '<p> Voiture d\'immatriculation ' . $v->getImmatriculation() . '.</p>';
-        ?>
+            echo '<a href=../controller/routeur.php?action=read&immat=' . $v->getImmatriculation() . '>Voiture d\'immatriculation' . $v->getImmatriculation() . '<br></a>';
+        ?> 
     </body>
 </html>
